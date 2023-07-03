@@ -1,0 +1,20 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "spring-prometheus"
+  description: "spring-prometheus"
+  annotations:
+    github.com/project-slug: angeelsanchez/spring-prometheus
+    backstage.io/techdocs-ref: dir:.
+    prometheus.io/scrape: "true"             # Habilita la recolección de métricas de Prometheus
+    prometheus.io/path: "http://100.64.235.91/metrics"           # Ruta relativa al punto de enlace de métricas
+    prometheus.io/port: "8080"
+    prometheus.io/alert: all
+    #prometheus.io/alert: 'Excessive Memory Usage'
+    prometheus.io/rule: hikaricp_connections_max,hikaricp_connections_max|component
+    #prometheus.io/rule: memUsage|component,node_memory_active_bytes|instance,sum by (instance) (node_cpu_seconds_total)
+    #grafana/dashboard-selector: "(tags @> 'my-service' || tags @> 'my-service-slo') && tags @> 'generated'"
+spec:
+  type: service
+  lifecycle: experimental
+  owner: user:guest
