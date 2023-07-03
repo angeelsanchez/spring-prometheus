@@ -1,8 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: "spring-prometheus"
-  description: "spring-prometheus"
+  name: "prometheus-prb"
+  description: "prometheus-prb"
   annotations:
     github.com/project-slug: angeelsanchez/spring-prometheus
     backstage.io/techdocs-ref: dir:.
