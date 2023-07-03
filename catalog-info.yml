@@ -11,7 +11,7 @@ metadata:
     prometheus.io/port: "8080"
     prometheus.io/alert: all
     #prometheus.io/alert: 'Excessive Memory Usage'
-    prometheus.io/rule: hikaricp_connections_max,hikaricp_connections_max|component
+    prometheus.io/rule: hikaricp_connections_max
     #prometheus.io/rule: memUsage|component,node_memory_active_bytes|instance,sum by (instance) (node_cpu_seconds_total)
     #grafana/dashboard-selector: "(tags @> 'my-service' || tags @> 'my-service-slo') && tags @> 'generated'"
 spec:
